@@ -1,0 +1,21 @@
+.char-content {
+  width: 100%;
+  min-height: 300px;
+  padding: 32px 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .image img {
+    max-width: 100%;
+  }
+
+  .name {
+    font-size: 24px;
+    font-weight: bold;
+  }
+}
+
+.hidden {
+  opacity: 0;
+}
