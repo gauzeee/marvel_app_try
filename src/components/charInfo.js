@@ -1,21 +1,13 @@
 import React from 'react';
 import Loader from './loader';
-import '../styles/char.scss'
-import GetSomething from '../helpers/getSomething';
-
-const getter = new GetSomething();
-
-export default class CharInfo extends React.Component {
-    state = {
-        loading: true,
-        character: null,
-        charId: 1017603
-    };
+import '../styles/char.scss';
+import {connect} from "react-redux";
 
 
+class CharInfo extends React.Component {
 
     renderCard = (char) => {
-
+        console.log(char)
         return (<div>
                 <div className="image">
                     <img src={`${char.thumbnail.path}/portrait_xlarge.jpg`} />
@@ -25,28 +17,24 @@ export default class CharInfo extends React.Component {
         )
     };
 
-    async componentDidMount() {
-        const char = await getter.getCharacter(this.state.charId);
-        this.setState({
-            character: char.data.results[0],
-            loading: false
-        })
-        console.log(this.state)
+     componentDidMount() {
+         console.log(this.props)
     }
 
 
     render() {
-        let {loading, character} = this.state;
-        const {selectChar} = this.props;
-
-        console.log(this.props)
-        
-        if(selectChar) character = selectChar;
-        
+        let {isLoaded, currentChar} = this.props;
+        console.log(currentChar);
         return (
             <div className="char-content">
-                {loading ? <Loader/> : this.renderCard(character)}
+                {!isLoaded ? <Loader/> : this.renderCard(currentChar)}
             </div>
         )
     }
 }
+
+const mapStateToProps = state => {
+    return state.charReducer;
+}
+
+export default connect(mapStateToProps)(CharInfo);
