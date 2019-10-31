@@ -1,15 +1,15 @@
 const charReducer = (state = {
-    currentChar: {name: "Choose somebody", thumbnail: {path: ''}, description: null},
+    currentChar: null,
     isLoaded: true,
     isFetching: false
 }, action) => {
     switch (action.type) {
         case "GET_CHAR_REQUEST":
-            return {currentChar: {}, isFetching: true, isLoaded: false};
+            return {currentChar: null, isFetching: true, isLoaded: false};
         case "GET_CHAR_SUCCESS":
             return {currentChar: action.payload[0], isLoaded: true, isFetching: false};
         case "GET_CHAR_ERROR":
-            throw new Error(action.payload);
+            return {currentChar: action.payload[0], isLoaded: true, isFetching: false};
         default:
             return state;
     }

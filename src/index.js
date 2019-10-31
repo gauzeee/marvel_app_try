@@ -9,14 +9,17 @@ import logger from "redux-logger";
 import charsReducer from "./reducers/charsReducer";
 import charReducer from "./reducers/charReducer";
 import {Provider} from "react-redux";
+import {BrowserRouter} from "react-router-dom";
 
 const reducers = combineReducers({charsReducer, charReducer});
 const store = createStore(reducers, applyMiddleware(thunk, logger));
 
 
-ReactDOM.render(<Provider store={store}>
-<App />
-    </Provider>, document.getElementById('root'));
+ReactDOM.render(<BrowserRouter>
+    <Provider store={store}>
+        <App />
+    </Provider>
+</BrowserRouter>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

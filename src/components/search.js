@@ -2,25 +2,24 @@ import React from 'react';
 import '../styles/char.scss'
 import {connect} from "react-redux";
 import {getChars} from "../actions/actions";
-import {Grid, Button, TextField, FormControl} from "@material-ui/core";
+import {Grid, Button, TextField} from "@material-ui/core";
+
 
 class Search extends React.Component{
     state = {
-        inputVal: '',
-        lastVal: 'Hero Name'
+        inputVal: ''
     }
 
     updateInputVal = e => {
         this.setState({
-            inputVal: e.target.value,
-            lastVal: this.state.lastVal
+            inputVal: e.target.value
         })
     }
 
     searchAction = () => {
         this.props.getCharsAction(this.state.inputVal);
+        sessionStorage.setItem('lastSearch', this.state.inputVal);
         this.setState({
-            lastVal: this.state.inputVal,
             inputVal: ''
         })
         document.getElementById('outlined-name').value = '';
@@ -28,26 +27,31 @@ class Search extends React.Component{
 
 
     render() {
+        console.log(this.state, this.props);
         return (
             <Grid
                 container
                    direction="row"
                    justify="center"
                    alignItems="center">
-                <FormControl>
+
                     <TextField
                         id="outlined-name"
-                        label={this.state.lastVal}
+                        label={this.props.lastSearch ? this.props.lastSearch : 'Hero Name'}
                         className=""
                         onChange={this.updateInputVal}
                         margin="normal"
                         variant="outlined"
                     />
-                    <Button onClick={this.searchAction} variant="contained" color="primary">Search</Button>
-                </FormControl>
+                    <Button style={{marginLeft: "8px", height: "54px", marginTop: "6px"}} onClick={this.searchAction} variant="contained" color="primary">Search</Button>
+
             </Grid>
         )
     }
+}
+
+const mapStateToProps = state => {
+    return state.charsReducer;
 }
 
 const mapDispatchToProps = dispatch => {
@@ -57,4 +61,4 @@ const mapDispatchToProps = dispatch => {
 }
 
 
-export default connect(null, mapDispatchToProps)(Search);
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

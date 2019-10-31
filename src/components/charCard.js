@@ -3,6 +3,7 @@ import Loader from './loader'
 import {Card, CardMedia, CardContent, Typography} from "@material-ui/core";
 import {getChar} from "../actions/actions";
 import {connect} from "react-redux";
+import {Link} from 'react-router-dom';
 
 class CharCard extends React.Component {
     state = {
@@ -24,7 +25,8 @@ class CharCard extends React.Component {
      renderChar = (char) => {
         const {name, thumbnail, description} = char;
         return (
-            <Card style={{maxWidth: "250px", margin: "6px", padding: "10px"}} onClick={() => {this.chooseChar(char)}}>
+            <Link to={{pathname: '/char/'+char.id}}>
+            <Card style={{width: "250px", height: "320px", margin: "6px", padding: "10px", cursor: 'pointer'}} onClick={() => {this.chooseChar(char)}}>
                 <CardMedia>
                     <img src={`${thumbnail.path}/portrait_medium.jpg`} alt=""/>
                 </CardMedia>
@@ -32,11 +34,9 @@ class CharCard extends React.Component {
                     <Typography gutterBottom variant="h5" component="h2">
                         {name}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                        {description}
-                    </Typography>
                 </CardContent>
             </Card>
+            </Link>
         )
     }
 

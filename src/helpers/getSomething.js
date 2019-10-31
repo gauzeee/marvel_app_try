@@ -9,7 +9,7 @@ class GetSomething {
     async getData(url, params) {
         try {
             const tailQuery = params ? params.map((item) => {
-                return `&${item.name}=${item.value}`
+                if(item.value.length > 0) return `&${item.name}=${item.value}`
             }) : '';
             console.log(tailQuery);
             let data = await fetch(`${this.apiBase}/${url}?limit=100&${getAuthKeys()}${tailQuery}`);

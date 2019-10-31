@@ -1,4 +1,5 @@
 import GetSomething from "../helpers/getSomething";
+import {logger} from "redux-logger/src";
 
 export const getChars = (name) => {
     return dispatch => {
@@ -28,9 +29,22 @@ export const getChar = (id) => {
             payload: id
         });
         GetSomething.getCharacter(id).then(data => {
+            let newData = data;
+            if(data.code === 404) {
+                newData = [{
+                    name: data.code,
+                    description: data.status,
+                    thumbnail: {
+                        full: true,
+                        path: 'https://qph.fs.quoracdn.net/main-qimg-67664d785c6b7f76c273cfabf120ef5e'
+                    }
+                }]
+            } else {
+                newData = data.data.results
+            }
             dispatch({
                 type: "GET_CHAR_SUCCESS",
-                payload: data.data.results
+                payload: newData
             })
         }).catch(err => {
             dispatch({

@@ -2,21 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d3d04e3f-d6be-4177-b318-a4365d52df89" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/actions/actions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/search.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/charReducer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/charsReducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/comicsList.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/home.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/actions/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/actions/actions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/charCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/charCard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/charInfo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/charInfo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/search.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/helpers/getSomething.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/getSomething.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/charReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/charReducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reducers/charsReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/charsReducer.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -80,7 +78,8 @@
       <workItem from="1570030405432" duration="6818000" />
       <workItem from="1570087887415" duration="21553000" />
       <workItem from="1570517062899" duration="37000" />
-      <workItem from="1572246652539" duration="11357000" />
+      <workItem from="1572246652539" duration="11882000" />
+      <workItem from="1572422440479" duration="11860000" />
     </task>
     <servers />
   </component>
@@ -92,7 +91,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
