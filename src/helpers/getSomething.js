@@ -16,8 +16,8 @@ class GetSomething {
             const result = await data.json();
             console.log(result)
             return result;
-        } catch {
-            return new Error('Something went wrong');
+        } catch(error) {
+            return new Error(error);
         }
     }
 

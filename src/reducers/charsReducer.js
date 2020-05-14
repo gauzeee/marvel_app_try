@@ -12,6 +12,7 @@ const charsReducer = (state={
         case "GET_CHARS_SUCCESS":
             return {chars: action.payload, isFetching: false, isLoaded: true, lastSearch: state.lastSearch};
         case "GET_CHARS_ERROR":
+            console.log(action);
             return {chars: action.payload, isFetching: false, isLoaded: true, lastSearch: state.lastSearch};
         default:
             return state
